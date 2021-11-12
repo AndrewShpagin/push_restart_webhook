@@ -1,4 +1,4 @@
-# GitHub webhook handler to push and restart the server
+# Super-lightweight GitHub webhook handler to push and restart the server
 ## The problem it solves
 In the GitHub's repository settings you may provide the webhook that triggers when you push some changes. 
 This is the simple server used as the webhook 
