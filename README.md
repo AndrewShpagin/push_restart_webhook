@@ -1,6 +1,7 @@
 # GitHub webhook handler to pull and restart the server
 ## The problem it solves
-In the GitHub's repository settings you may provide the webhook that triggers when you push some changes. This is the simple server used as the webhook 
+In the GitHub's repository settings you may provide the webhook that triggers when you push some changes. 
+This is the simple server used as the webhook 
 to restart the application on the server side as soon as user pushes some changes.
 
 ## Installing and using
@@ -10,7 +11,8 @@ First, clone this repo on your server. Fill the variables in the node.js  in cor
 // The script may do anyting, I use it to restart the Node.js server of the bigger application
 const scriptPath = '~/restart.sh';
 
-// The webhook URI that will be triggered by GitHub. Change the command to some unique string. The full URI looks like:
+// The webhook URI that will be triggered by GitHub. Change the command to some unique string. 
+// The full URI looks like:
 // http://ip_address:port/restart-app-8765ABX32
 const restartCommand = '/restart-app-8765ABX32';
 
