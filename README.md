@@ -1,4 +1,4 @@
-# GitHub webhook handler to pull and restart the server
+# GitHub webhook handler to push and restart the server
 ## The problem it solves
 In the GitHub's repository settings you may provide the webhook that triggers when you push some changes. 
 This is the simple server used as the webhook 
@@ -34,6 +34,14 @@ git pull
 npm run build
 pm2 delete some_app_id
 pm2 --name some_app_id start npm -- start
+```
+Run the webhook as usually
+```
+node node.js
+```
+or
+```
+pm2 --name app_webhook start node node.js
 ```
 And don't forget to open the port on your server:
 ```
