@@ -39,4 +39,4 @@ And don't forget to open the port on your server:
 ```
 sudo ufw allow 34567/tcp
 ```
-Now go to GiHub's repo settings, Webhooks / Add webhook, set the correct Payload URL to the Payload URL, Add webhook.
+Now go to GiHub's repo settings, Webhooks / Add webhook, set the correct Payload URL as mentioned before, Add webhook.
