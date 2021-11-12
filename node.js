@@ -9,7 +9,8 @@ const server = http.createServer(app);
 // The script may do anyting, I use it to restart the Node.js server of the bigger application
 const scriptPath = '~/restart.sh';
 
-// The webhook URI that will be triggered by GitHub. Change the command to some unique string. The full URI looks like:
+// The webhook Payload URL that will be triggered by GitHub. Change the command to some unique string. 
+// The full Payload URL looks like:
 // http://ip_address:port/restart-app-8765ABX32
 const restartCommand = '/restart-app-8765ABX32';
 
