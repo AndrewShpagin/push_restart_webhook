@@ -1,5 +1,6 @@
 const http = require('http'); 
 var cp = require('child_process'); 
+var ip = require("ip");
 
 const express = require('express'); 
 const app = express(); 
@@ -28,6 +29,7 @@ let lastReport='nothing new there.';
 
 app.use(restartCommand, (req, res, next) => { 
   console.log('Restart requested.'); 
+  // execute the shell script to restart
   cp.exec(scriptPath, {}, (code, stdout, stderr) => {  
     if(code) lastReport = stderr;
     else lastReport = stdout;
@@ -41,6 +43,10 @@ app.use(infoCommand, (req, res, next) => {
   res.end(header + lastReport + pageEnd);
 });
 
-console.log('Auto-restart sever started at:', port);
-server.listen(port);
+try{
+  server.listen(port);
+  console.log(`The push webhook started at:\nhttp://${ip.address()}:${port}${restartCommand}`);
+} catch(err){
+  console.log(`Unable to start the webhook server, probably the port ${port} is busy.`);
+}
 
