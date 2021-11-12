@@ -11,8 +11,8 @@ First, clone this repo on your server. Fill the variables in the node.js  in cor
 // The script may do anyting, I use it to restart the Node.js server of the bigger application
 const scriptPath = '~/restart.sh';
 
-// The webhook URI that will be triggered by GitHub. Change the command to some unique string. 
-// The full URI looks like:
+// The webhook Payload URL that will be triggered by GitHub. Change the command to some unique string. 
+// The full Payload URL looks like:
 // http://ip_address:port/restart-app-8765ABX32
 const restartCommand = '/restart-app-8765ABX32';
 
@@ -39,3 +39,4 @@ And don't forget to open the port on your server:
 ```
 sudo ufw allow 34567/tcp
 ```
+Now go to GiHub's repo settings, Webhooks / Add webhook, set the correct Payload URL to the Payload URL, Add webhook.
